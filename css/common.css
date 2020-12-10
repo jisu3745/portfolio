@@ -1,0 +1,459 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* SCROLL */
+::-webkit-scrollbar { width: 10px; }
+/* 스크롤바의 width */
+::-webkit-scrollbar-track { background-color: #f0f0f0; }
+/* 스크롤바의 전체 배경색 */
+::-webkit-scrollbar-thumb { 
+    background: #DC7B52; 
+}
+/* 스크롤바 색 */
+::-webkit-scrollbar-button { display: none; }
+/* 위 아래 버튼 (버튼 없애기를 함) */
+
+
+.container {min-width:1280px}
+.page {height:100vh}
+
+
+header {height:100px;position: relative;}
+
+header .header_inner { width:100%; height:100px; margin:0 auto;position: fixed; top: 0;
+background: #fff; border-top:23px solid #7a3611;z-index: 1000;
+}
+
+header .header_inner .logo {position:absolute; top:20px; left:280px;}
+
+/*js 버튼*/
+#alertLypop {
+	position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,.4); z-index: 100000; display:none; transition: all .1s ease;}
+#alertLypop .popcont {
+	width:510px; height: 240px; background:#fff; position:absolute; top:50%; left:50%; margin:-120px 0 0 -255px;  border-radius: 5px; display:table; padding:10px;}
+
+#alertLypop .popcont .icon_msg {display:block; width:88px; height:88px; margin:0 auto; background:url('../img/msg_iconset.png') no-repeat 0 0;
+background-size:auto 88px}
+#alertLypop .popcont .icon_msg.ty1 {background-position:-88px 0}
+#alertLypop .popcont .icon_msg.ty2 {background-position:-176px 0}
+#alertLypop .popcont .icon_msg + .stxt {margin-top:20px}
+#alertLypop .popcont .btnclose {position: absolute ;margin-top: 15px;right: 30px}
+#alertLypop .popcont .btnclose:hover {color: #9900F4;}
+
+#alertLypop .popcont .stxt {text-align: center;  font-size:20px;margin-top:45px;letter-spacing: 1px;line-height: 36px}
+#alertLypop .popcont .stxt.ty1 {color:#666; font-size:1em}
+#alertLypop .popcont .stxt + .stxt {margin-top:7px}
+#alertLypop .popcont .stxt + .btnset {margin-top:20px }
+#alertLypop .popcont .msgset {display:table-cell; vertical-align: middle}
+
+#alertLypop.open {display:block}
+#alertLypop.open .popcont {animation: scaleAni .3s 1}
+#alertLypop.off {display:block}
+#alertLypop.off .popcont {transform: scale(0); opacity: 0; transition:all .3s ease}
+#alertLypop.off.out {}
+
+
+#lypop {position:fixed; top:0; left:0; width:100%; height: 100vh;  z-index: 9999; display: none}
+
+#lypop .inner {position:absolute; width:900px; height:96vh; top:50%; left:50%; margin:-48vh 0 0 -400px; z-index: 100; border:1px solid #000;}
+#lypop .lypopcont {overflow: auto; height:100%; overflow-x:hidden;}
+#lypop .inner .closebtn { 
+position:absolute; top:0; right:-60px;
+display:block; width:30px; height:30px; background:#ccc;
+}
+
+#lypop .inner .closebtn .arrset {display: block; width:30px; height: 30px; position:absolute; top:0; left: 0; right:0; bottom:0; margin:auto;}
+#lypop .inner .closebtn .arrset span {display:block; width:30px; height:2px; background:#fff; }
+#lypop .inner .closebtn .arrset span + span {margin-top:10px}
+#lypop .inner .closebtn .arrset span:nth-child(1) {transform: translateY(13px) rotate(45deg)}
+#lypop .inner .closebtn .arrset span:nth-child(2) {transform: translateY(1px) rotate(-45deg)}
+
+
+#lypop .lypopcont .simg {}
+#lypop .bg {position:absolute; top:0; left:0; width:100%; height: 100vh; background:rgba(0,0,0,0);}
+
+#lypop.on {display:block}
+#lypop.on .bg {/* background:rgba(0,0,0,.7) */animation: bgani .5s linear 1; background:rgba(0,0,0,.3) }
+
+
+#lypop2 {position:fixed; top:0; left:0; width:100%; height: 100vh;  z-index: 9999; display: none}
+
+#lypop2 .inner {position:absolute; width:900px; height:96vh; top:50%; left:50%; margin:-48vh 0 0 -400px; z-index: 100; border:1px solid #000;}
+#lypop2 .lypopcont {overflow: auto; height:100%; overflow-x:hidden;}
+#lypop2 .inner .closebtn { 
+position:absolute; top:0; right:-60px;
+display:block; width:30px; height:30px; background:#ccc;
+}
+
+#lypop2 .inner .closebtn .arrset {display: block; width:30px; height: 30px; position:absolute; top:0; left: 0; right:0; bottom:0; margin:auto;}
+#lypop2 .inner .closebtn .arrset span {display:block; width:30px; height:2px; background:#fff; }
+#lypop2 .inner .closebtn .arrset span + span {margin-top:10px}
+#lypop2 .inner .closebtn .arrset span:nth-child(1) {transform: translateY(13px) rotate(45deg)}
+#lypop2 .inner .closebtn .arrset span:nth-child(2) {transform: translateY(1px) rotate(-45deg)}
+
+
+#lypop2 .lypopcont .simg {}
+#lypop2 .bg {position:absolute; top:0; left:0; width:100%; height: 100vh; background:rgba(0,0,0,0);}
+
+#lypop2.on {display:block}
+#lypop2.on .bg {/* background:rgba(0,0,0,.7) */animation: bgani .5s linear 1; background:rgba(0,0,0,.3) }
+
+@keyframes bgani { 
+	0% {background:rgba(0,0,0,0)}
+	50% {}
+	100% {background:rgba(0,0,0,.3)}
+}
+.titset .hd3 {float: left; padding-top: 40px; font-size:18px; }
+
+
+	
+@keyframes scaleAni {
+	0% {
+		transform: scale(0)
+	}
+	100% {
+		transform: scale(1)
+	}
+}
+
+
+
+@keyframes scaleAniClose {
+  0% {
+    transform: scale(0);
+  }
+	100%{
+		transform: scale(0);
+
+	}
+}
+
+
+header .header_inner .scrollm {position:absolute; right:200px; top:30px}
+header .header_inner .scrollm .navlist {overflow: hidden}
+header .header_inner .scrollm .navlist > li {float:left}
+header .header_inner .scrollm .navlist > li > a {
+	display:block; padding:0 40px 0 40px;
+}
+header .header_inner .scrollm .navlist > li .on a {color: #FF5400}
+header .header_inner .scrollm .navlist > li > a:hover {
+	text-decoration:underline ; color: #FF5400 }
+
+
+/* 01 페이지 */
+.main {position:relative; width:1280px; height:1050px; margin:0 auto; z-index: 100}
+.main .textbox{}
+.main .textbox .textbg {position: absolute; top:70px; left:43px;}
+.main .textbox .text {position: absolute; top:88px; left:125px;}
+
+
+.main .mainimg {}
+.main .mainimg .minner {position: absolute;;top: 232px; left: 780px;}
+.main .mainimg .minner img {}
+
+.main .bgtext01 {position: absolute; top:77px; right: 62px }
+.main .bgtext02 {position: absolute; top:666px; left: 57px; 
+	color:#af6244; transform: rotate(-90deg);
+}
+.main .bgtext02 .stxt {font-family: Nanum;}
+.main .bgtext02 .stxt .grid {margin-right: 17px;letter-spacing:6px}
+
+.main .bgtext03 {position: absolute; top:822px; left: 278px;}
+.main .bgtext03 .stxt{color: #3B1F02}
+.main .bgtext03 .stxt .grid {margin-right: 100px;
+	letter-spacing:4px }
+.main .bgtext03 .stxt .grid:nth-child(4){margin-right:115px ;}
+.main .bgtext03 .stxt .grid:nth-child(5){margin-right:55px ;}
+
+.mainbg {position:absolute; top:-150px; left:0; right:0; height:1132px; overflow: hidden;}
+.mainbg .inner {position:absolute; width:1920px; height:100%; left:50%; margin:0 0 0 -960px; background:url('../img/mainbg.png') no-repeat 0 0; top: 0;}
+
+
+/* 02 페이지 */
+
+.aboutme {height:1050px; position:relative; margin-top:-50px}
+.aboutme > .inner {width:1280px; margin:auto; position:relative; z-index: 100; height:100%}
+
+.aboutme .profilebox {display:flex; justify-content: center; align-items: center; height:100%}
+.aboutme .profilebox .profile {text-align:center; margin-left: 50px}
+.aboutme .profilebox .profile .simg { }
+.aboutme .profilebox .profile .simg img { }
+
+.aboutme .profilebox .profile .simg + .stit {margin-top:45px}
+.aboutme .profilebox .profile .stit {font-size:54px; font-family: 'NanumSquareB'; color:#3c1603; line-height: 1}
+.aboutme .profilebox .profile .stit + .stxt {margin-top:20px}
+.aboutme .profilebox .profile .stxt {text-align:left}
+.aboutme .profilebox .profile .stxt > span {font-size:18px; font-family: 'NanumSquareR'; color:#3c1603; padding-left:45px; line-height: 1.6}
+
+.aboutme .profilebox .profile + .port_info {margin-left:200px}
+.aboutme .profilebox .port_info { }
+
+.aboutme .profilebox .port_info .plist > li .dplist > dt,
+.aboutme .profilebox .port_info .plist > li .dplist > dd {display:inline-block; vertical-align: top}
+
+.aboutme .profilebox .port_info .plist > li .dplist > dt { 
+font-size:18px; color:#7a2711; min-width:250px
+}
+.aboutme .profilebox .port_info .plist > li .dplist > dt::before { 
+content:""; display: inline-block; width: 9px; height:14px; 
+background:url('../img/dplist_titbar.png') no-repeat 0 0; margin-right:12px
+}
+
+.aboutme .profilebox .port_info .plist > li + li {margin-top:50px}
+
+
+
+.aboutme .profilebox .port_info .plist > li .dplist > dd {font-size:14px}
+
+.aboutme .profilebox .port_info .plist > li .dplist > dd .ic { }
+.aboutme .profilebox .port_info .plist > li .dplist > dd .ic > li { 
+line-height: 1.7; color:#160801; overflow: hidden; display: flex; align-items: center;
+justify-content: space-between
+}
+
+.aboutme .profilebox .port_info .plist > li .dplist > dd .ic > li .skill_txt {}
+.aboutme .profilebox .port_info .plist > li .dplist > dd .ic > li .skill_txt + .progressbar { 
+margin-left:50px
+}
+.aboutme .profilebox .port_info .plist > li .dplist > dd .ic > li .progressbar { 
+position:relative; width:75px; height:8px; border:1px solid #7a6259; border-radius: 50px}
+.aboutme .profilebox .port_info .plist > li .dplist > dd .ic > li .progressbar .inner { 
+position:absolute; top:0; left:0; height:100%; background:#7a6259; border-radius: 50px
+}
+
+/* 03 페이지 */
+
+.renewal01 {position:relative}
+.renewal01::before {content:""; display:block; width:878px; height: 423px;
+background:url('../img/renewbg01.png') no-repeat 0 0; position:absolute; top:0; right:0; z-index: -100
+}
+.renewal01::after {content:""; display:block; width:962px; height: 710px;
+background:url('../img/renewbg02.png') no-repeat 0 0; position:absolute; left:0; top:0 ;z-index: -100
+}
+
+
+
+.renewal01 .renew_inner {position:relative; width:1280px; height:1083px; margin:0 auto}
+
+
+.renewal01 .renew_inner .renew_cont_inner {position:absolute;width:1200px; height:660px;top: 219px; left: 78px}
+.renewal01 .renew_inner .renew_cont_inner .title {position: absolute; }
+
+.renewal01 .renew_inner .renew_cont_inner .title .tit {
+	font-size:17px; font-family: 'NanumSquareR'; color:#C76327; line-height: 1; margin-bottom: 3px
+}
+.renewal01 .renew_inner .renew_cont_inner .title .hd1 {
+	font-size:40px; font-family: 'NanumSquareEB'; color:#000; line-height: 1;margin-bottom:30px
+}
+.renewal01 .renew_inner .renew_cont_inner .title .logo { display: inline-block;
+}
+
+.renewal01 .renew_inner .renew_cont_inner .content {position: absolute;top: 160px;}
+.renewal01 .renew_inner .renew_cont_inner .content .contlist {}
+.renewal01 .renew_inner .renew_cont_inner .content .contlist > li {margin-bottom:40px}
+.renewal01 .renew_inner .renew_cont_inner .content .contlist > li .inner {}
+.renewal01 .renew_inner .renew_cont_inner .content .contlist > li .inner > dt {
+	font-family: 'NanumSquareEB';font-size:18px; color:#000 ;margin-bottom: 5px
+}
+.renewal01 .renew_inner .renew_cont_inner .content .contlist > li .inner > dd {
+	font-family: 'NanumSquareR';font-size:15px; color:#000;
+	letter-spacing:0;
+}
+
+.renewal01 .renew_inner .renew_cont_inner .btnset {position: absolute; top: 620px; left: 0}
+.renewal01 .renew_inner .renew_cont_inner .btnset.two {position: absolute; top: 620px; left: 200px}
+
+.renewal01 .renew_inner .renew_cont_inner .btnset .underlined {
+  color: black;flex: 1;text-decoration: none; background-image: linear-gradient(to right, yellow 0, yellow 100%);
+  background-position: 0 1.2em; background-size: 0 100%; background-repeat: no-repeat; transition: background .5s;}
+.renewal01 .renew_inner .renew_cont_inner .btnset .underlined:hover {
+    background-size: 100% 100%;}
+ .renewal01 .renew_inner .renew_cont_inner .btnset .underlined--offset {
+    background-position: 0 0.2em;
+    box-shadow: inset 0 -.5em 0 0 white;
+  }
+
+
+.renewal01 .renew_inner .renew_cont_inner .btnset .btn {font-family: 'NanumSquareB';font-size:20px; color:#000;
+border: 2px solid #f8e2d6; border-radius: 50px; padding:8px 22px
+}
+.renewal01 .renew_inner .renew_cont_inner .btnset >.btn {margin-right: 18px}
+
+/*btn popup*/
+.renewal01 .renew_inner .renew_cont_inner .btnset {width: 100%;
+  height: 100%; background-size: cover;}
+.renewal01 .renew_inner .renew_cont_inner .btscont{
+	width: 100%;height: 100%; position: fixed; top: 0; left: 0;background: rgba(0, 0, 0, 0.5);
+	visibility: hidden; opacity: 0;transition: all 0.25s ease-in-out;
+	text-align: center;z-index: 100;
+}
+.renewal01 .renew_inner .renew_cont_inner .btscont.open {
+	opacity: 1;visibility: visible;
+}
+
+.renewal01 .renew_inner .renew_cont_inner .btscont .close{
+	font-size: 25px; display: block;float: right;color: #fff;top: 130px;
+	position: absolute; right: 70px
+}
+/* SCROLL */
+.btscont::-webkit-scrollbar { width: 20px; }
+/* 스크롤바의 width */
+.btscont::-webkit-scrollbar-track { background-color: #f0f0f0; }
+/* 스크롤바의 전체 배경색 */
+.btscont::-webkit-scrollbar-thumb { 
+    background: #431702; height: 10px
+}
+/* 스크롤바 색 */
+.btscont::-webkit-scrollbar-button { display: none; }
+/* 위 아래 버튼 (버튼 없애기를 함) */
+
+.renewal01 .renew_inner .renew_cont_inner .renewal_img {}
+.renewal01 .renew_inner .renew_cont_inner .renewal_img .imgbox {position: absolute ;width:872px ; height:557px;
+	top: 140px; left:  390px ;
+}
+
+
+/* 04 페이지 */
+
+.renewal02 {}
+.renewal02 .renew_inner::after {
+	content:""; display:block; width:492px; height: 332px;
+background:url('../img/renewbg03.png') no-repeat 0 0; position:absolute; bottom: 0 ;right: 0 ;z-index: -100;
+}
+.renewal02 .renew_inner {position: relative }
+.renewal02 .renew_inner .renew_cont_inner {
+	position: relative; margin: 0 auto ; width: 1226px; height:1000px;top: 170px
+	}
+
+.renewal02 .renew_inner .renew_cont_inner .title {
+	position: absolute; top:0 ; right:0; text-align: right; overflow: hidden
+}
+.renewal02 .renew_inner .renew_cont_inner .title .tit {
+	font-size:17px; font-family: 'NanumSquareR'; color:#C76327; line-height: 1; margin-bottom: 3px; 
+}
+.renewal02 .renew_inner .renew_cont_inner .title .hd1 {
+	font-size:40px; font-family: 'NanumSquareEB'; color:#000; line-height: 1; margin-bottom:30px
+}
+.renewal02 .renew_inner .renew_cont_inner .title .logo { float: right }
+
+
+.renewal02 .renew_inner .renew_cont_inner .content {
+	position: absolute; top:170px ; right:0; text-align: right;
+}
+.renewal02 .renew_inner .renew_cont_inner .content .contlist {}
+.renewal02 .renew_inner .renew_cont_inner .content .contlist > li {margin-bottom:40px}
+.renewal02 .renew_inner .renew_cont_inner .content .contlist > li .inner {}
+.renewal02 .renew_inner .renew_cont_inner .content .contlist > li .inner > dt {
+	font-family: 'NanumSquareEB';font-size:18px; color:#000 ;margin-bottom: 5px
+}
+.renewal02 .renew_inner .renew_cont_inner .content .contlist > li .inner > dd {
+	font-family: 'NanumSquareR';font-size:15px; color:#000;
+	letter-spacing:0;
+}
+
+
+.renewal02 .renew_inner .renew_cont_inner .btnset {position: absolute; top:635px ; right: 0}
+.renewal02 .renew_inner .renew_cont_inner .btnset.two {position: absolute; top: 635px; right: 200px}
+
+.renewal02 .renew_inner .renew_cont_inner .btnset .underlined {
+  color: black;flex: 1;text-decoration: none; background-image: linear-gradient(to right, yellow 0, yellow 100%);
+  background-position: 0 1.2em; background-size: 0 100%; background-repeat: no-repeat; transition: background .5s;}
+.renewal02 .renew_inner .renew_cont_inner .btnset .underlined:hover {
+    background-size: 100% 100%;}
+ .renewal02 .renew_inner .renew_cont_inner .btnset .underlined--offset {
+    background-position: 0 0.2em;
+    box-shadow: inset 0 -.5em 0 0 white;
+  }
+
+.renewal02 .renew_inner .renew_cont_inner .btnset .btn {font-family: 'NanumSquareB';font-size:20px; color:#000;
+border: 2px solid #f8e2d6; border-radius: 50px; padding:8px 22px
+}
+.renewal02 .renew_inner .renew_cont_inner .btnset .btn:nth-child(1) {margin-right: 18px}
+
+
+.renewal02 .renew_inner .renew_cont_inner .renewal_img {}
+.renewal02 .renew_inner .renew_cont_inner .renewal_img .imgbox {position: absolute ;width:892px ; height:524px;
+	top: 148px; left: 0 ;
+}
+
+
+/* 05 페이지 */
+
+.artwork {position:relative;}
+.artwork::after {
+	content:""; display:block; width:927px; height:100% ;
+	background:url('../img/artwork_bg.png') no-repeat 0 0; position:absolute; right :0; top: 0 ;z-index: -100
+}
+.artwork .artwork_inner {position: relative; margin: 0 auto ;
+	width: 1260px; height:90%;
+}
+
+.artwork .artwork_inner .art_cont_inner {position: absolute; margin: 0 auto ;width: 1079px; height:674px; top: 90px; left: 39px;
+}
+
+.artwork .artwork_inner .art_cont_inner .title {position: relative; top: 100px}
+.artwork .artwork_inner .art_cont_inner .title .hd1 {
+	font-size:30px; font-family: 'NanumSquareB'; color:#453c3a; line-height: 1;margin-bottom: 12px
+}
+.artwork .artwork_inner .art_cont_inner .title .txt {
+	font-size:18px; font-family: 'NanumSquareL'; color:#453c3a; line-height: 1;
+}
+
+/*content*/
+
+.artwork .artwork_inner .art_cont_inner .contents {
+	position: absolute; width:900px ; height:575px ; top:180px ;left:180px;
+}
+
+.artwork .artwork_inner .art_cont_inner .contents .text{position: absolute;bottom: 50px;}
+.artwork .artwork_inner .art_cont_inner .contents .text h1 {font-family: 'NanumSquareB';font-size:20px; color:#000;margin-bottom: 6px;}
+.artwork .artwork_inner .art_cont_inner .contents .text p {font-family: 'NanumSquareR';font-size:16px; color:#453c3a;margin-bottom: 25px;}
+.artwork .artwork_inner .art_cont_inner .contents .img {position: absolute; right: 0;top: 0;}
+.artwork .artwork_inner .art_cont_inner .contents .img img {width: auto; height: auto;
+    max-width: 550px;max-height: 550px;
+}
+
+
+/*슬라이더*/
+
+.artwork .artwork_inner .art_cont_inner .contents .swiper-container {
+position: absolute; width:900px ; height:100% ; }
+.artwork .artwork_inner .art_cont_inner .contents .swiper-container .swiper-wrapper {
+}
+.artwork .artwork_inner .art_cont_inner .contents .swiper-container .swiper-wrapper .swiper-slide {
+}
+.artwork .artwork_inner .art_cont_inner .contents .swiper-container .swiper-pagination { bottom: 0}
+
+
+
+.artwork .bottom {
+	height:30px;width: 100% ;background:#f9a892;position: absolute;bottom: 0;left: 0;
+}
+.artwork .bottom p {
+	font-size:16px; color:#fffffe ;font-family: 'NanumSquareL';
+	float: right; text-align:center; margin: 5px 20px;letter-spacing: 5px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
